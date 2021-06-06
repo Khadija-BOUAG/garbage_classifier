@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garbage Classifier</title>
+
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../static/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="text-center">
+    <section id="banner">
+        <div class="garbage-text">
+            <h1>Garbage Classifier</h1>
+            <p>we all need to keep our nature clean and save its resources, here you can easily classify your garbage </p>
+        </div>
+    </section>
+    <section>
+        <form class="form-upload" method=post enctype=multipart/form-data>
+            <h1 class="h3 mb-3 font-weight-normal">Please upload image</h1>
+            <input type="file" id="image" name="image" class="form-control" required="" autofocus="">
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Predict</button>
+        </form>    
+            <div class="recycle-bin_class">
+                <img class="resize-bin" src="../static/images/download.png" align="middle">
+            </div>
+            <br><br><br><br><br><br><br><br><br><br>
+            {% if prediction %}
+                 <h3 class="h3 mb-3 font-weight-normal">This is : {{prediction}}</h3>
+            {% endif %}
+            <br><br>
+        </section>
+</body>
+</html>
+
+
+

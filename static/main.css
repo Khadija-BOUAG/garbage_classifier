@@ -1,0 +1,57 @@
+
+body {
+    height: 100%;
+}
+
+#banner{
+    background: linear-gradient(rgb(0, 0, 0,0.5),#5ab964),url(../static/images/garbage_.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.garbage-text{
+    text-align: center;
+    color: #e3fce5;
+    padding-top: 180px;
+}
+.garbage-text h1{
+    font-size: 120px;
+    font-family: 'Kaushan Script', cursive;
+}
+.garbage-text p{
+    font-size: 20px;
+}
+
+.recycle-bin_class {
+    width:  200px;
+    height: 200px;
+    text-align: center;
+}
+.resize-bin {
+    width: 1000px;
+    display: block;
+    position: relative;
+    top: 20%;
+    left: 80%;}
+
+.form-upload{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-upload .checkbox {
+    font-weight: 400;
+}
+.form-upload .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+.form-upload .form-control:focus {
+    z-index: 2;
+}
+
