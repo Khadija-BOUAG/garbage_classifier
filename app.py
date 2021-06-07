@@ -5,10 +5,13 @@
 
 
 from flask import Flask, render_template, request
+import torch
+from torchvision import transforms
 import os
 from PIL import Image
 from pathlib import Path
 import pickle
+
 
 app = Flask(__name__)
 
