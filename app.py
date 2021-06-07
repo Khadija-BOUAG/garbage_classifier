@@ -54,4 +54,4 @@ def upload_predict():
     # return render_template('try2.html', prediction=None, image_loc = None)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
