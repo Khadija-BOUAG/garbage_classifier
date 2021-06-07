@@ -11,11 +11,10 @@ import os
 from PIL import Image
 import pickle
 
-
 app = Flask(__name__)
+model = pickle.load(open('model.pkl', 'rb'))
 
 UPLOAD_FOLDER = 'upload'
-model = pickle.load(open('model.pkl', 'rb'))
 
 classes = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
 transformations = transforms.Compose([transforms.Resize((256, 256)), transforms.ToTensor()])
@@ -32,9 +31,6 @@ def predict_image(img, model):
     nb = preds[0].item()
     result = classes[nb]
     return result
-
-
-# In[ ]:
 
 
 @app.route('/')
@@ -58,5 +54,4 @@ def upload_predict():
     # return render_template('try2.html', prediction=None, image_loc = None)
 
 if __name__ == '__main__':
-    app.run()
-
+    app.run(debug=True)
