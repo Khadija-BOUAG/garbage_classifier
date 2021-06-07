@@ -9,7 +9,6 @@ import torch
 from torchvision import transforms
 import os
 from PIL import Image
-from pathlib import Path
 import pickle
 
 
@@ -18,6 +17,7 @@ app = Flask(__name__)
 UPLOAD_FOLDER = 'upload'
 model = pickle.load(open('model.pkl', 'rb'))
 
+classes = ['cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash']
 transformations = transforms.Compose([transforms.Resize((256, 256)), transforms.ToTensor()])
 
 def predict_image(img, model):
@@ -29,7 +29,8 @@ def predict_image(img, model):
     # Pick index with highest probability
     prob, preds  = torch.max(yb, dim=1)
     # Retrieve the class label
-    result = dataset.classes[preds[0].item()]
+    nb = preds[0].item()
+    result = classes[nb]
     return result
 
 
